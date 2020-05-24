@@ -6,5 +6,9 @@
     "grpc": "^1.24.2",
     "pino": "^6.2.1",
     "typescript": "^3.9.3"
+  },
+  "scripts": {
+    "build": "cd ./src && tsc --build",
+    "run": "export $(xargs < .env) && node out/index.js"
   }
 }

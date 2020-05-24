@@ -6,7 +6,7 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/typescript/index.d.ts" />
+      <root url="file://$PROJECT_DIR$/src/index.d.ts" />
     </CLASSES>
     <SOURCES />
   </library>
