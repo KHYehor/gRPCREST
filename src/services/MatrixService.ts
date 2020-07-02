@@ -27,14 +27,19 @@ export default class MatrixService implements IMatrixService {
     return new Promise((resolve, reject) => {
       const callback = (err: Error, res: any) => {
         if (err) {
-          reject (err);
+          reject(err);
           return;
         }
         const resultMatrix: Matrix = [];
         res.matrix.forEach((obj: any) => resultMatrix.push(obj?.digit));
         resolve(resultMatrix);
       }
-      MatrixService.grpcMatrix.MatrixSum({ matrix1, matrix2 }, callback);
+      const mappedMatrix1 = matrix1.map(arr => ({ digit: arr }));
+      const mappedMatrix2 = matrix2.map(arr => ({ digit: arr }));
+      MatrixService.grpcMatrix.MatrixSum({
+        matrix1: mappedMatrix1,
+        matrix2: mappedMatrix2
+      }, callback);
     });
   }
 

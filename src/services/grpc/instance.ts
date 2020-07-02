@@ -18,7 +18,7 @@ const grpcPackage = protoLoader.loadSync(PROTO_PATH, options);
 const { CalculateMatrix } = grpc.loadPackageDefinition(grpcPackage).calculate;
 // @ts-ignore
 const grpcMatrix = new CalculateMatrix(
-  '127.0.0.1:50051',
+  '127.0.0.1:5000',
   grpc.credentials.createInsecure()
 );
 
