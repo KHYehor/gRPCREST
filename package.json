@@ -4,8 +4,7 @@
     "@grpc/proto-loader": "^0.5.4",
     "fastify": "^2.14.0",
     "grpc": "^1.24.2",
-    "pino": "^6.2.1",
-    "typescript": "^3.9.3"
+    "pino": "^6.2.1"
   },
   "scripts": {
     "build": "cd ./src && tsc --build",

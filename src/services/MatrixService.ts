@@ -11,7 +11,7 @@ export default class MatrixService implements IMatrixService {
       MatrixService.grpcMatrix = grpcMatrix;
     }
   }
-  // Add interface
+
   public static getInstance(grpcMatrix: any): MatrixService {
     if (MatrixService.instance) return MatrixService.instance;
     MatrixService.instance = new MatrixService(grpcMatrix);
