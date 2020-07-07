@@ -13,5 +13,11 @@ RUN yarn global add typescript
 RUN tsc -p src/tsconfig.json
 # Copy proto file
 RUN cp -r src/services/grpc/proto out/services/grpc/
-# Start project
-CMD ["node", "out/"]
+# Open port
+EXPOSE 3030/tcp
+# Setting envs
+ENV GRPC_SERVICE loadbalancer:5000
+ENV HOST 0.0.0.0
+ENV PORT 3030
+# Start project via script
+ENTRYPOINT ["node", "out/"]

@@ -7,6 +7,8 @@ import RESTServer from './app';
 import setUpRoutes from "./routes";
 import setUpMiddlewares from "./middlewares";
 
+// const { PORT, HOST } = process.env;
+
 const config: AppConfig = {
   setUpRoutes,
   setUpMiddlewares,
@@ -16,7 +18,8 @@ const Application = new RESTServer(config);
 
 Application
   .setUpApp()
-  .listen(3030, '127.0.0.1')
+// @ts-ignore
+  .listen(3030, '0.0.0.0')
   .then(console.log)
   .catch(console.error);
 
