@@ -20,7 +20,7 @@ export default class RESTServer extends EventEmitter {
     return this;
   }
 
-  public async listen(PORT: number): Promise<string> {
-    return this.app.listen(PORT);
+  public async listen(PORT: number, HOST: string): Promise<string> {
+    return this.app.listen(PORT, HOST);
   }
 }
